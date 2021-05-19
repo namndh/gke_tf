@@ -18,34 +18,6 @@ resource "google_compute_global_address" "airflow-static-ip" {
   name = "airflow-static-ip"
 }
 
-# resource "google_compute_disk" "airflow-redis-disk" {
-#   name  = "airflow-redis-disk"
-#   type  = "pd-ssd"
-#   size = "200"
-#   zone  = "${var.zone}"
-# }
-
-# resource "google_sql_database_instance" "airflow-db" {
-#   name = "airflow-db"
-#   database_version = "POSTGRES_9_6"
-#   region = "${var.region}"
-#   settings {
-#     tier = "db-g1-small"
-#   }
-# }
-
-# resource "google_sql_database" "airflow-schema" {
-#   name = "airflow"
-#   instance = "${google_sql_database_instance.airflow-db.name}"
-# }
-
-# resource "google_sql_user" "proxyuser" {
-#   name = "${var.postgres_user}"
-#   password = "${var.postgres_pw}"
-#   instance = "${google_sql_database_instance.airflow-db.name}"
-#   host = "cloudsqlproxy~%"
-# }
-
 resource "google_compute_subnetwork" "gke-subnet" {
   name = "gkesubnet"
   ip_cidr_range = "10.168.0.0/26"

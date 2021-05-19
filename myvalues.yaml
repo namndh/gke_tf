@@ -117,7 +117,7 @@ web:
   ## Add extra volumes
   ##
     - name: requirements
-      mountPath: /bitnami/python
+      mountPath: /bitnami/python/requirements.txt
       subPath: requirements.txt
      
   extraVolumes:
@@ -259,7 +259,7 @@ scheduler:
   ## Add extra volumes
   ##
     - name: requirements
-      mountPath: /bitnami/python
+      mountPath: /bitnami/python/requirements.txt
       subPath: requirements.txt
   extraVolumes:
   ## Add extra environment variables
@@ -392,7 +392,7 @@ worker:
   ## Add extra volumes
   ##
     - name: requirements
-      mountPath: /bitnami/python
+      mountPath: /bitnami/python/requirements.txt
       subPath: requirements.txt
   extraVolumes:
   ## Add extra environment variables
